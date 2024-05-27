@@ -1,6 +1,7 @@
 package de.jonas.griefpreventionsendblocks.utility;
 
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
+import me.ryanhamshire.GriefPrevention.PlayerData;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -11,8 +12,9 @@ public class ClaimBlocks {
     }
 
     public void setRemaining(Player p, int count) {
-        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),
-                "setaccruedclaimblocks " + p.displayName() + " " + count);
+        PlayerData pd = GriefPrevention.instance.dataStore.getPlayerData(p.getUniqueId());
+        pd.setAccruedClaimBlocks(count);
+        GriefPrevention.instance.dataStore.savePlayerData(p.getUniqueId(), pd);
     }
 
     public void addRemaining(Player p, int count) {

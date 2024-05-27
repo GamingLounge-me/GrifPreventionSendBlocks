@@ -2,3 +2,15 @@ name: GriefPreventionSendBlocks
 version: '${version}'
 main: de.jonas.griefpreventionsendblocks.GriefPreventionSendBlocks
 api-version: '1.20'
+authors:
+  - Jon1Games
+dependencies:
+  server:
+    GriefPrevention:
+      load: BEFORE
+      required: true
+      join-classpath: true
+
+
+
+

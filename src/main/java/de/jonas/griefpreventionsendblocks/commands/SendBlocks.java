@@ -16,14 +16,14 @@ public class SendBlocks  {
 
     public SendBlocks() {
 
-        new CommandAPICommand("gpsend")
+        new CommandAPICommand("claimsend")
                 .withArguments(new PlayerArgument("Spieler"))
                 .withArguments(new IntegerArgument("Anzahl"))
                 .executesPlayer((player, args) -> {
                     Player p = (Player) args.get("Spieler");
                     int count = (int) args.get("Anzahl");
 
-                    if (count == 0) {
+                    if (count <= 0) {
                         player.sendMessage(mm.deserialize("<red>Das ist kein valider sende Wert!"));
                     } else if (p == null) {
                         player.sendMessage(mm.deserialize("<red>Das ist kein Spieler!"));
@@ -36,10 +36,13 @@ public class SendBlocks  {
                         claimBlocks.addRemaining(p, count);
                         claimBlocks.subtractRemaining(player, count);
 
-                        p.sendMessage(mm.deserialize("Du hast <green><count><reset> Claimblöcke erhalten.",
-                                Placeholder.component("count", Component.text(count))));
-                        player.sendMessage(mm.deserialize("Du hast <green><count><reset> Claimblöcke and " +
-                                "<green><player><reset> gesendet.",
+                        p.sendMessage(mm.deserialize("Du hast <green><count><reset> Claimblöcke von" +
+                                        " <player><reset> erhalten.",
+                                Placeholder.component("count", Component.text(count)),
+                                Placeholder.component("player", player.teamDisplayName())
+                                ));
+                        player.sendMessage(mm.deserialize("Du hast <green><count><reset> Claimblöcke an " +
+                                "<player><reset> gesendet.",
                                 Placeholder.component("count", Component.text(count)),
                                 Placeholder.component("player", p.teamDisplayName())));
                     }

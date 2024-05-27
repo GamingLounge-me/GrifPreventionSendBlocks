@@ -1,5 +1,7 @@
 package de.jonas.griefpreventionsendblocks;
 
+import de.jonas.griefpreventionsendblocks.commands.AddBlocks;
+import de.jonas.griefpreventionsendblocks.commands.RemoveBlocks;
 import de.jonas.griefpreventionsendblocks.commands.SendBlocks;
 import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPIBukkitConfig;
@@ -19,6 +21,8 @@ public final class GriefPreventionSendBlocks extends JavaPlugin {
 
         CommandAPI.onLoad(new CommandAPIBukkitConfig(this));
         new SendBlocks();
+        new AddBlocks();
+        new RemoveBlocks();
 
     }
 
