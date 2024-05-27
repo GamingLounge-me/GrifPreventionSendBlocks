@@ -1,0 +1,4 @@
+name: GriefPreventionSendBlocks
+version: '${version}'
+main: de.jonas.griefpreventionsendblocks.GriefPreventionSendBlocks
+api-version: '1.20'
