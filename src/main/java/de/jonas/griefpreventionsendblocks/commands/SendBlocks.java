@@ -21,9 +21,9 @@ public class SendBlocks  {
                 .withArguments(new IntegerArgument("Anzahl"))
                 .executesPlayer((player, args) -> {
                     Player p = (Player) args.get("Spieler");
-                    int count = (int) args.get("Anzahl");
+                    Integer count = (Integer) args.get("Anzahl");
 
-                    if (count <= 0) {
+                    if (count == null || count <= 0) {
                         player.sendMessage(mm.deserialize("<red>Das ist kein valider sende Wert!"));
                     } else if (p == null) {
                         player.sendMessage(mm.deserialize("<red>Das ist kein Spieler!"));

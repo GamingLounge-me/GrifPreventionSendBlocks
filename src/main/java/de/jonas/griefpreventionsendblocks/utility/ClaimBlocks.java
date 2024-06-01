@@ -2,7 +2,6 @@ package de.jonas.griefpreventionsendblocks.utility;
 
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
 import me.ryanhamshire.GriefPrevention.PlayerData;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class ClaimBlocks {

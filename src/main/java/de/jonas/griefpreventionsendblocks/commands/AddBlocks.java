@@ -23,9 +23,9 @@ public class AddBlocks {
                 .withArguments(new IntegerArgument("Anzahl"))
                 .executes((sender, args) -> {
                     Player p = (Player) args.get("Spieler");
-                    int count = (int) args.get("Anzahl");
+                    Integer count = (Integer) args.get("Anzahl");
 
-                    if (count <= 0) {
+                    if (count == null || count <= 0) {
                         if (sender instanceof Player) {
                             sender.sendMessage(mm.deserialize("<red>Das ist kein valider sende Wert!"));
                         }
