@@ -1,13 +1,14 @@
 package de.jonas.griefpreventionsendblocks.utility;
 
+import org.bukkit.entity.Player;
+
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
 import me.ryanhamshire.GriefPrevention.PlayerData;
-import org.bukkit.entity.Player;
 
 public class ClaimBlocks {
 
     public int getRemaining(Player p) {
-        return GriefPrevention.instance.dataStore.getPlayerData(p.getUniqueId()).getRemainingClaimBlocks();
+        return GriefPrevention.instance.dataStore.getPlayerData(p.getUniqueId()).getAccruedClaimBlocks();
     }
 
     public void setRemaining(Player p, int count) {
