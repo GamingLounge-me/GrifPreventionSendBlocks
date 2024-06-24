@@ -1,14 +1,15 @@
 package de.jonas.griefpreventionsendblocks;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
 import de.jonas.griefpreventionsendblocks.commands.AddBlocks;
 import de.jonas.griefpreventionsendblocks.commands.RemoveBlocks;
 import de.jonas.griefpreventionsendblocks.commands.SendBlocks;
 import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPIBukkitConfig;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public final class GriefPreventionSendBlocks extends JavaPlugin {
 
@@ -23,7 +24,7 @@ public final class GriefPreventionSendBlocks extends JavaPlugin {
         new SendBlocks();
         new AddBlocks();
         new RemoveBlocks();
-
+        
     }
 
     @Override
