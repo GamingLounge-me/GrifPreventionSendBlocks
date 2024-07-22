@@ -1,5 +1,5 @@
 # GrifPreventionSendBlocks
 
-/gpsebd <palyer> <amount>
-
-Plugin language is German and currently there is no config for change available.
+Plugin for sending, adding and removing GriefPrevention Claim blocks.
+1. Currently this plugin has no config so everything is hardcoded.
+2. Language is German
